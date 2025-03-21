@@ -3,7 +3,7 @@
 //git config --global user.name pablo
 //git config --global user.email pablo@mail.com
 
-void prender_leds(uint8_t cual);
+/*void prender_leds(uint8_t cual);
 
 uint8_t sumar(uint8_t valA, uint8_t valB);
 
@@ -53,6 +53,6 @@ void prender_leds_2(uint8_t cual)
     // hacer algo porque esta funcion no hace una mierda.
 
 
-}
+}*/
 
 
