@@ -37,3 +37,19 @@ void prender_leds(uint8_t cual)
     PORTD |= (1 << PD6);
     PORTD |= (1 << PD7);
 }
+
+
+//------------------------------------------------------
+//------------------------------------------------------
+void prender_leds_2(uint8_t cual)
+{
+
+    switch (cual)
+    {
+    }
+    // hacer algo porque esta funcion no hace una mierda.
+
+
+}
+
+
