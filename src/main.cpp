@@ -1,5 +1,8 @@
 #include <Arduino.h>
 
+//git config --global user.name pablo
+//git config --global user.email pablo@mail.com
+
 void prender_leds(uint8_t cual);
 
 uint8_t sumar(uint8_t valA, uint8_t valB);
