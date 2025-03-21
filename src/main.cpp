@@ -16,7 +16,7 @@ int main(void)
 
     /*escribo algo*/
 
-    /*escribo otra cosa*/
+    /*escribo otra cosa
 }
 
 //------------------------------------------------------
