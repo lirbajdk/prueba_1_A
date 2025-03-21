@@ -5,12 +5,13 @@
 
 /*
 - cuente (ascendente) en binario de 4 bits y presente el valor en un puerto a elección.
-- la cuenta debe realizarse en forma autónoma cada 1 segundo.
-- al llegar al valor máximo la cuenta debe invertir el sentido (descendente).
+- la cuenta debe realizarse en forma MANUAL al presionar un pulsador en un puerto de entrada a elección
+- al llegar al valor máximo la cuenta debe invertir el sentido (descendente)
 - al llegar al valor mínimo repite el punto 1 en bucle infinito
-- Re-implementar el contador SIN el uso de retardos bloqueantes, utilizando TIMER0 (no es necesario incluir delay.h)
+- Re-implementar el contador SIN el uso de retardos bloqueantes, utilizando TIMER0 (no es necesario incluir delay.h) y teniendo en cuenta los rebotes (bounce) del pulsador, implemente el mecanismo para corregirlos.
+- Utilizando MEF (maquina de estados)incorpore la opcion de si se mantiene presionado 3 segundos el contador avance/retroceda  mas rápido en continuo hasta soltar el pulsador.
 */
-// #define bot1 ((PINB >> PB5) & 0x01)
+
 
 static int8_t secon = 1;
 
