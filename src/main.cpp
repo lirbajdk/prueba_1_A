@@ -1,5 +1,5 @@
 #include <Arduino.h>
-
+//-------------Ejercicio 1-------------//
 //git config --global user.name pablo
 //git config --global user.email pablo@mail.com
 
@@ -39,8 +39,8 @@ int main(void)
 
     uint8_t resu = sumar(5,90);
 
-    /*escribo algo*/
-    /*escribo otra cosa
+    escribo algo
+    escribo otra cosa
 }
 
 //------------------------------------------------------
@@ -78,5 +78,3 @@ void prender_leds_2(uint8_t cual)
 
 
 }*/
-
-
