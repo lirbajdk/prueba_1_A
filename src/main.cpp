@@ -1,80 +1,44 @@
 #include <Arduino.h>
-//-------------Ejercicio 1-------------//
+//-------------Ejercicio 2-------------//
 //git config --global user.name pablo
 //git config --global user.email pablo@mail.com
 
-#include <Arduino.h>
+//#define bot1 ((PINB >> PB5) & 0x01)
 
 
-#define bot1 ((PINB >> PB5) & 0x01)
+void setup_timer0()
+{
+    TCCR0A = 0b00000010; // Modo CTC
+    TIMSK0 = 0b00000010; // Habilitar interrupción de comparación A
+    OCR0A = 249;         // Valor de comparación
+    TCCR0B = 0b00000011; // Prescaler 64
+}
 
 
 int main()
-{
-    DDRC |= 0b111111;
-    DDRB &= ~(1 << PB5);
-    PORTB |= (1 << PB5);
+{    
+    DDRC |= 0b1111;
+
+
+    int8_t cntb = 0;
+    int8_t arribajo = 0; //arriba = 1, abajo = 0;
     while (1)
     {
-        if (bot1 == 1)
+        asm("NOP");
+        if (cntb != 1111)
         {
-            PORTC = 0b00101101;
+            cntb++;
+            if(cntb == 1111)
+                arribajo = 0;
+
+
+        }else if (arribajo == 0){
+            cntb --;
         }
-        else
-        {
-            PORTC = ~0b00101101;
-        }
+
+
+        //_delay_ms(20);
     }
 }
 
 
-/*void prender_leds(uint8_t cual);
-
-uint8_t sumar(uint8_t valA, uint8_t valB);
-
-int main(void)
-{
-
-    prender_leds(5);
-
-    uint8_t resu = sumar(5,90);
-
-    escribo algo
-    escribo otra cosa
-}
-
-//------------------------------------------------------
-//------------------------------------------------------
-uint8_t sumar(uint8_t valA, uint8_t valB)
-{
-    return valA + valB;
-}
-
-//------------------------------------------------------
-//------------------------------------------------------
-void prender_leds(uint8_t cual)
-{
-
-    switch (cual)
-    {
-    }
-
-    PORTD |= (1 << PD4);
-    PORTD |= (1 << PD5);
-    PORTD |= (1 << PD6);
-    PORTD |= (1 << PD7);
-}
-
-
-//------------------------------------------------------
-//------------------------------------------------------
-void prender_leds_2(uint8_t cual)
-{
-
-    switch (cual)
-    {
-    }
-    // hacer algo porque esta funcion no hace una mierda.
-
-
-}*/
